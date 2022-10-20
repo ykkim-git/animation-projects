@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    body {
+      background-color: gray;
+      padding: 0;
+      margin: 0;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: salmon;
+
+      animation-name: box_ani;
+      /* 지속시간 */
+      animation-duration: 1s;
+
+      /* 반복 횟수: infinite: 무제한 */
+      animation-iteration-count: 4;
+
+      /* 방향: 반복에 어색함없이 다시 자연스럽게 돌아오도록 */
+      animation-direction: alternate;
+
+      /* 지연시간: n초뒤에 시작 */
+      /* animation-delay: 2s; */
+
+      /* 가속도: linear */
+      animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+      /* 마지막 위치에 멈추도록 */
+      /* animation-fill-mode: forwards; */
+    }
+
+    /* 애니메이션 움직임 제어 {animation-name} */
+    @keyframes box_ani {
+
+      /* 1. 옆으로 움직이기 */
+      form {
+        margin-left: 0;
+      }
+
+      to {
+        margin-left: 200px;
+      }
+    }
+
+
+    .mybox {
+      width: 100px;
+      height: 100px;
+      background-color: orange;
+      animation-name: my_box;
+      animation-duration: 1s;
+      animation-iteration-count: 4;
+      animation-direction: alternate;
+      animation-timing-function: linear;
+
+      position: absolute;
+    }
+
+    @keyframes my_box {
+      from {
+        top: 0;
+        left: 0;
+      }
+
+      to {
+        bottom: 0;
+        right: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <div class="box"></div> -->
+  <div class="mybox"></div>
+
+</body>
+
+</html>
