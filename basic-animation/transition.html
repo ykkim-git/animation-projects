@@ -22,13 +22,16 @@
       background-color: salmon;
 
       /* 지속시간 */
-      transition-duration: 1s;
+      /* transition-duration: 1s; */
 
       /* transition 지속시간 연기 */
       /* transition-delay: 1s; */
 
       /* transition 가속도 */
       transition-timing-function: cubic-bezier(0.2, 0.04, 0.08, 0.95);
+      
+      /* all: 지정할 경우 요소에 지정된 모든 속성이 변한됨 timing function은 ease가 기본 */
+      /* transition: all 2s; */
     }
 
     .box:hover {
