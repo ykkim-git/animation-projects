@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <style>
+    body {
+      background: black;
+      height: 6000px;
+      font-family: 'nanumsquare';
+    }
+
+    div {
+      margin-top: 1000px;
+      color: white;
+      text-align: center;
+      opacity: 0;
+      transition: all 0.5s;
+      transform: rotate(-720deg)
+    }
+  </style>
+
+  <div>
+    <h1>안녕하세요? </h1>
+  </div>
+  <div>
+    <h1>저는 김영권입니다.</h1>
+  </div>
+  <div>
+    <h1>요즘 날씨가 많이 추워졌네요</h1>
+  </div>
+  <div>
+    <h2>환절기 감기 조심하세요.</h2>
+  </div>
+
+  <script>
+    let observer = new IntersectionObserver((e) => {
+      e.forEach((박스) => {
+        // 박스.intersectionRatio // 박스가 화면에 몇퍼센트 보여지는지 (ex: 50% -> 0.5)
+        if (박스.isIntersecting) {
+          // 박스가 화면에 보일 때
+          박스.target.style.opacity = 1;
+        } else {
+          // 박스가 화면에서 사라질때
+          박스.target.style.opacity = 0;
+        }
+      })
+    })
+
+    let div = document.querySelectorAll("div");
+    observer.observe(div[0]); // 특정 element 감시
+    observer.observe(div[1]);
+    observer.observe(div[2]);
+    observer.observe(div[3]);
+
+
+
+  </script>
+</body>
+
+</html>
